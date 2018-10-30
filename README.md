@@ -1,21 +1,14 @@
 
-# Basic SQL Queries Review
+# Review: Using Sqlite
 
-## Overview
+## Introduction
 
 In this lesson, we'll review how to write SQL queries to retrieve and add specific data to SQL database tables.
 
 ## Objectives
-* Provide deliberate practice for the following skills:
-    1. Define a query as an SQL statement that retrieves data from a database
-    2. Use the `ORDER BY`modifier to order tables by specific `SELECT` statements
-    3. Use the `ASC` and `DESC` modifier to sort queries in ascending and descending orders
-    4. Use the `LIMIT` modifier to determine the number of records to retrieve from a dataset
-    5. Use the `BETWEEN` modifier to retrieve a specific data set between two ranges
-    6. Use the `NULL` data type keyword to insert new records into a table
-    7. Use the `COUNT` function to count the number of records that meet a certain condition
-    8. Use the `GROUP BY` function to group your results according to the values in a given column
-
+You will be able to:
+* Practice on SQL concepts learned previously--SELECT, JOIN, WHERE, aggregation functions, etc.
+* Access data from a sqlite database in a jupyter notebook
 
 ## Review: Running SQLite Through the Terminal
 
@@ -68,7 +61,7 @@ conn.close()
 For a full run down of how to use the sqlite library in python, see the [python docs for this library](https://docs.python.org/2/library/sqlite3.html).
 
 
-## Review: What is a SQL Query?
+## Review: what is a SQL Query?
 
 The term "query" refers to any SQL statement that retrieves data from your database. In fact, we've already written a number of SQL queries using basic `SELECT` statements. We've already seen how to retrieve single units of data, or rows, with queries like these:
 
@@ -436,3 +429,8 @@ SELECT cats.name, dogs.name FROM cats, dogs;
 ```
 
 You may see this in the future. Don't let it trip you up.
+
+## Summary
+
+In this lecture you reviewed how to write SQL queries to retrieve and add specific data to SQL database tables.
+
