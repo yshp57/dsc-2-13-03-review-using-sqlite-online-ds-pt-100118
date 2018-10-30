@@ -8,30 +8,31 @@ In this lesson, we'll review how to write SQL queries to retrieve and add specif
 ## Objectives
 You will be able to:
 * Practice on SQL concepts learned previously--SELECT, JOIN, WHERE, aggregation functions, etc.
-* Access data from a sqlite database in a jupyter notebook
+* Access data from a sqlite database in a Jupyter Notebook
 
 ## Review: Running SQLite Through the Terminal
 
-For labs in this section, we'll be working with sql databases, which are stored as .sql files.  There are two methods we can use to access the data in these sql databases.  The first is to open up a sqlite database through the terminal (Mac/Linux) or Powershell(Windows). 
+For labs in this section, we'll be working with SQL databases, which are stored as .db (or sometimes .sqlite) files. There are two methods we can use to access the data in those SQL databases. The first is to open up a sqlite database through the terminal (Mac/Linux) or Powershell(Windows).
 
-To open a sqlite server, we can open a terminal window and type `sqlite3`.  This will be connected to a transient, in-memory database, because we have not connected it to anything.  Additional steps will be needed to save any work done to tables.
+To open a sqlite server, we can open a terminal window and type sqlite3. This will be connected to a transient, in-memory database, because we have not connected it to anything. Additional steps will be needed to save any work done to tables.
 
-To open a database file called `cats.sqlite3`, we just add the name of the file as a parameter when opening sqlite by typing `sqlite3 cats.sqlite3`. 
+To open a database file called cats.db, we just add the name of the file as a parameter when opening sqlite by typing sqlite3 cats.db.
+
 
 ## Review: Connecting to SQLite Databases with Python
 
-We can also connect to sql files using python.  By default, the python standard libary contains a package called `sqlite3`. We can use this package to connect to sql databases and query or modify them as needed. 
+By default, the Python standard libary contains a package called `sqlite3`. We can use this package to connect to SQL databases and query or modify them as needed. 
 
-To work with a sql database through python, the following steps are always needed:
+To work with a SQL database through python, the following steps are always needed:
 
 1. Import the `sqlite3` library
 2. Create a **_connection object_** using the `sqlite3` library that connects to the target database
 3. Create a **_cursor object using_** the connection object.
 
-Once these steps are complete, we can use the cursor object to execute sql Commands. Note that if we make any changes to the database, we must commit them first--otherwise, they'll be lost when we disconnect from the database. 
-
+Once these steps are complete, we can use the cursor object to execute SQL Commands. Note that if we make any changes to the database, we must commit them first - otherwise, they'll be lost when we disconnect from the database. 
 
 The following code block contains an example of connecting to an example database, creating a table, saving changes, and disconnecting:
+
 
 ```python
 # Step 1: Import library
@@ -54,8 +55,6 @@ conn.commit()
 
 # Disconnect from database.  Any uncommited changes will be lost. 
 conn.close()
-
-
 ```
 
 For a full run down of how to use the sqlite library in python, see the [python docs for this library](https://docs.python.org/2/library/sqlite3.html).
@@ -79,13 +78,13 @@ SELECT * FROM cats WHERE name = "Maru";
 
 What if, however, we wanted to select the oldest cat? Or all of the cats that don't currently belong to an owner? Or all of the cats with short names?
 
-Data storage isn't very useful if we can't manipulate, view, and analyze that data. Luckily for us, SQL is actually a powerful tool for doing just that.
+Data storage isn't very useful if we can't manipulate, view, and analyze that data. Luckily for us, SQL is a powerful tool for doing just that.
 
 In this exercise, we'll walk through executing a handful of common and handy SQL queries.
 
 ## Code Along: SQL Queries
 
-So far, we've only queried databases, as this is a much more common task for a data scientist--its more rare to be tasked with creating or altering tables.  However, this is still valuable to know--try to work through the remainder of this notebook by executing these sql commands through the terminal!
+So far, we've only queried databases, as this is a much more common task for a data scientist - its more rare to be tasked with creating or altering tables.  However, this is still valuable to know - try to work through the remainder of this notebook by executing these sql commands through the terminal!
 
 ### Creating our Database
 
